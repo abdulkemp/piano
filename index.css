@@ -9,11 +9,14 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: aquamarine;
+  padding: 0 10px;
+  background-image: url(https://i.postimg.cc/Xv6QmnCg/Download-free-vector-of-Black-flowing-music-notes-on-white-background-vector-about-music-music-note.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .wrapper {
-  width: 780px;
+  /* width: 780px; */
   border-radius: 20px;
   padding: 35px 40px;
   background-color: black;
@@ -97,7 +100,7 @@ header .column span {
     border: 1px solid black;
 }
 
-.piano-keys .white:active{
+.piano-keys .white.active{
     background: linear-gradient(to bottom, white 0%, #eee 100%);
     box-shadow: inset -5px 5px 20px rgba(0,0,0,0.2);
 }
@@ -111,7 +114,7 @@ header .column span {
     background: linear-gradient(#333, #000);
 }
 
-.piano-keys .black:active{
+.piano-keys .black.active{
     background: linear-gradient(to bottom, #000, #434343);
     box-shadow: inset -5px 5px 10px rgba(255,255,255,0.1);
 }
@@ -124,3 +127,49 @@ header .column span {
     font-size: 1.13rem;
 }
 
+.piano-keys .key.hide span{
+    display: none;
+}
+
+@media screen and (max-width: 815px) {
+    .wrapper{
+        padding: 25px;
+    }
+    header{
+        flex-direction: column;
+    }
+    header :where(h2, .column) {
+        margin-bottom: 13px;
+    }
+    .volume-slider input{
+        max-width: 100px;
+    }
+    .piano-keys{
+        margin-top: 20px;
+    }
+    .piano-keys .key:where(:nth-child(9), :nth-child(10)){
+        display: none;
+    }
+    .piano-keys .black{
+        height: 100px;
+        width: 40px;
+        margin: 0 -20px 0 -20px;
+    }
+    .piano-keys .white{
+        height: 180px;
+        width: 60px;
+    }
+}
+
+@media screen and (max-width: 615px) {
+    .piano-keys .key:nth-child(13),
+    .piano-keys .key:nth-child(14),
+    .piano-keys .key:nth-child(15),
+    .piano-keys .key:nth-child(16),
+    .piano-keys .key:nth-child(17) {
+display: none;
+    }
+    .piano-keys .white{
+        width: 50px;
+    }
+}
